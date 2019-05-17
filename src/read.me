@@ -1,0 +1,64 @@
+# Amaai audio classifier
+
+Provides simple functions to load audio features, visualise, and run classifiers. 
+
+In our first version, we focus on aggregate predictions, i.e., one class per audio file. 
+
+
+###Requirements 
+* OpenSmile installed
+* Python3 packages such as matplotlib, pandas, etc. 
+
+
+###How does it work? 
+By importing amaai.*, you can run simple commands such as: 
+
+`features = getOpenSmileFeatures('emobase', '../test/')`
+
+=> reads in the audio files in folder test and returns a pandas dataframe with opensmile features based on emobase config file
+
+Datastructure for input: 
+~~~~ 
+*root folder
+
+**class A
+
+***audio file 1
+
+***audio file 2
+
+***audio file ...
+
+**class B
+
+***audio file 1
+
+***audio file 2
+
+***audio file ...
+~~~~ 
+
+
+Some commands you can use: 
+
+`visualise(features, 'tsne')`
+
+=> visualise said features in t-sne. 
+
+`visualise(features, 'explore')`
+
+=> some simple data exploration, e.g. are the classes balanced 
+
+
+###Todo
+* Currently emobase .config from opensmile works, other config files to be added
+* Other features
+* VAE approach (Jyun)
+* TNN approach (Raven)
+* CNN approach
+* Other more complex approaches (e.g. Cifar10)
+* Polish existing code
+
+###Standards
+* Everything needs to be generalisable and well documented (use the python comment tags for functions, alt-enter in PyCharm), so we can keep everything clear.  
+* Coded in Pycharm IDE, look for .idea file to load the project. 
